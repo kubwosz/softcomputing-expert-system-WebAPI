@@ -18,72 +18,127 @@ namespace Softcomputing_expert_system
 
             foreach(var c in carsExamples)
             {
-                for (int i = 0; i < c.carType.Length; i++)
-                {
-                    if (questionnaire[0].answers.Contains(c.carType[i]))
+                    if (c.carType.Contains(questionnaire[0].answers[0]))
                     {
                         carPoints[c.Id]++;
                     }
-                }
 
-                if (questionnaire[1].answers.Contains(c.power))
+                if (questionnaire[1].answers[0] == c.power)
                 {
                     carPoints[c.Id]++;
                 }
 
-                if (questionnaire[2].answers.Contains(c.fuelConsumption))
+                if (questionnaire[2].answers[0] == c.fuelConsumption)
                 {
                     carPoints[c.Id]++;
                 }
 
-                if (questionnaire[3].answers.Contains(c.facilities))
+                if (questionnaire[3].answers[0] == c.facilities)
                 {
                     carPoints[c.Id]++;
                 }
 
-                for (int i = 0; i < c.gearBox.Length; i++)
-                {
-                    if (questionnaire[4].answers.Contains(c.gearBox[i]))
-                    {
-                        carPoints[c.Id]++;
-                    }
-                }
-
-                for (int i = 0; i < c.interiorTrim.Length; i++)
-                {
-                    if (questionnaire[5].answers.Contains(c.interiorTrim[i]))
-                    {
-                        carPoints[c.Id]++;
-                    }
-                }
-
-                if (questionnaire[6].answers.Contains(c.route))
+                if (c.gearBox.Contains(questionnaire[4].answers[0]))
                 {
                     carPoints[c.Id]++;
                 }
 
-                if (questionnaire[7].answers.Contains(c.safety))
+                if (c.interiorTrim.Contains(questionnaire[5].answers[0]))
                 {
                     carPoints[c.Id]++;
                 }
 
-                if (questionnaire[8].answers.Contains(c.budget))
+                if (questionnaire[6].answers[0] == c.route)
                 {
                     carPoints[c.Id]++;
                 }
 
-                if (questionnaire[9].answers.Contains(c.newCar))
+                if (questionnaire[7].answers[0] == c.safety)
                 {
                     carPoints[c.Id]++;
                 }
 
-                for (int i = 0; i < c.driveType.Length; i++)
+                if (questionnaire[8].answers[0] == c.budget)
                 {
-                    if (questionnaire[10].answers.Contains(c.driveType[i]))
-                    {
-                        carPoints[c.Id]++;
-                    }
+                    carPoints[c.Id]++;
                 }
+
+                if (questionnaire[9].answers[0] == c.newCar)
+                {
+                    carPoints[c.Id]++;
+                }
+
+                if (c.driveType.Contains(questionnaire[10].answers[0]))
+                {
+                    carPoints[c.Id]++;
+                }
+
+                //for (int i = 0; i < c.carType.Length; i++)
+                //{
+                //    if (questionnaire[0].answers.Contains(c.carType[i]))
+                //    {
+                //        carPoints[c.Id]++;
+                //    }
+                //}
+
+                //if (questionnaire[1].answers.Contains(c.power))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //if (questionnaire[2].answers.Contains(c.fuelConsumption))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //if (questionnaire[3].answers.Contains(c.facilities))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //for (int i = 0; i < c.gearBox.Length; i++)
+                //{
+                //    if (questionnaire[4].answers.Contains(c.gearBox[i]))
+                //    {
+                //        carPoints[c.Id]++;
+                //    }
+                //}
+
+                //for (int i = 0; i < c.interiorTrim.Length; i++)
+                //{
+                //    if (questionnaire[5].answers.Contains(c.interiorTrim[i]))
+                //    {
+                //        carPoints[c.Id]++;
+                //    }
+                //}
+
+                //if (questionnaire[6].answers.Contains(c.route))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //if (questionnaire[7].answers.Contains(c.safety))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //if (questionnaire[8].answers.Contains(c.budget))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //if (questionnaire[9].answers.Contains(c.newCar))
+                //{
+                //    carPoints[c.Id]++;
+                //}
+
+                //for (int i = 0; i < c.driveType.Length; i++)
+                //{
+                //    if (questionnaire[10].answers.Contains(c.driveType[i]))
+                //    {
+                //        carPoints[c.Id]++;
+                //    }
+                //}
             }
 
             int bestCarid = -1;
