@@ -23,19 +23,72 @@ namespace Softcomputing_expert_system
                         carPoints[c.Id]++;
                     }
 
-                if (questionnaire[1].answers[0] == c.power)
+                    //id2
+                if(c.power > 0 && c.power <= 2)
                 {
-                    carPoints[c.Id]++;
+                    if(questionnaire[1].answers[0] == 3)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                if (c.power > 2 && c.power <= 4)
+                {
+                    if (questionnaire[1].answers[0] == 1)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                if (c.power == 5)
+                {
+                    if (questionnaire[1].answers[0] == 2)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                //id3
+                if (c.fuelConsumption > 0 && c.fuelConsumption <= 2)
+                {
+                    if (questionnaire[2].answers[0] == 2)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                if (c.fuelConsumption > 2 && c.fuelConsumption <= 4)
+                {
+                    if (questionnaire[2].answers[0] == 1)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                if (c.fuelConsumption == 5)
+                {
+                    if (questionnaire[2].answers[0] == 3)
+                    {
+                        carPoints[c.Id]++;
+                    }
                 }
 
-                if (questionnaire[2].answers[0] == c.fuelConsumption)
+                //id4
+                if (c.facilities > 0 && c.facilities <= 2)
                 {
-                    carPoints[c.Id]++;
+                    if (questionnaire[3].answers[0] == 2)
+                    {
+                        carPoints[c.Id]++;
+                    }
                 }
-
-                if (questionnaire[3].answers[0] == c.facilities)
+                if (c.facilities > 2 && c.facilities <= 4)
                 {
-                    carPoints[c.Id]++;
+                    if (questionnaire[3].answers[0] == 3)
+                    {
+                        carPoints[c.Id]++;
+                    }
+                }
+                if (c.facilities == 5)
+                {
+                    if (questionnaire[3].answers[0] == 1)
+                    {
+                        carPoints[c.Id]++;
+                    }
                 }
 
                 if (c.gearBox.Contains(questionnaire[4].answers[0]))
@@ -73,7 +126,7 @@ namespace Softcomputing_expert_system
                     carPoints[c.Id]++;
                 }
 
-                //for (int i = 0; i < c.carType.Length; i++)
+                    //for (int i = 0; i < c.carType.Length; i++)
                 //{
                 //    if (questionnaire[0].answers.Contains(c.carType[i]))
                 //    {
