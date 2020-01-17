@@ -21,16 +21,9 @@ namespace Softcomputing_expert_system.Controllers
         }
 
         //[HttpGet]
-        //public IEnumerable<WeatherForecast> Get()
+        //public IActionResult Get()
         //{
-        //    var rng = new Random();
-        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    {
-        //        Date = DateTime.Now.AddDays(index),
-        //        TemperatureC = rng.Next(-20, 55),
-        //        Summary = Summaries[rng.Next(Summaries.Length)]
-        //    })
-        //    .ToArray();
+        //    return Ok();
         //}
 
         [HttpPost]
@@ -53,9 +46,9 @@ namespace Softcomputing_expert_system.Controllers
                 };
 
             }
-            ExpertSystem.ProceedExpertSystem(questions);
+            var result = ExpertSystem.ProceedExpertSystem(questions);
 
-            return Ok(questions);
+            return Ok(result);
         }
     }
 }
