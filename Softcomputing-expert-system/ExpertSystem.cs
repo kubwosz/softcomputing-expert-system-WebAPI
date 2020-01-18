@@ -37,7 +37,10 @@ namespace Softcomputing_expert_system
             string sportCarLongDistances = "";
             string budgetCarNewCar = "";
 
-            //Caluclate total number of checked answers
+            CarScore[] carPointsObjects = new CarScore[carsExamples.Count];
+
+
+            //Calculate total number of checked answers
             int answersCounter = 0;
             foreach(var q in questionnaire)
             {
@@ -250,11 +253,17 @@ namespace Softcomputing_expert_system
                         carPoints[c.Id]+=driveTypeWeight;
                     }
                 }
-            }
+
+                    carPointsObjects[c.Id - 1] = new CarScore
+                    {
+                        Id = c.Id,
+                        Points = carPoints[c.Id],
+                        CarName = c.name
+                    };
+                }
             }
 
 
-            CarScore[] carPointsObjects = new CarScore[carsExamples.Count + 1];
 
             int bestCarid = 0;
             for (int i = 0; i < carPoints.Length; i++)
@@ -263,12 +272,9 @@ namespace Softcomputing_expert_system
                 {
                     bestCarid = i;
                 }
-                carPointsObjects[i] = new CarScore
-                {
-                    Id = i,
-                    Points = carPoints[i]
-                };
+                
             }
+
             var sortedArray = carPointsObjects.OrderBy(s => s.Points).ToArray();
 
             return new Result

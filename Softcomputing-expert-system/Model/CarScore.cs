@@ -9,5 +9,7 @@ namespace Softcomputing_expert_system.Model
     {
         public int Id { get; set; }
         public int Points { get; set; }
+        public string CarName{ get; set; }
+
     }
 }

@@ -8,7 +8,7 @@ namespace Softcomputing_expert_system.Model
     public class Car
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string name { get; set; }
         public int[] carType { get; set; }
         public int power { get; set; }
         public int fuelConsumption { get; set; }
